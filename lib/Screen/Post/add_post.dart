@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:firebase_work/Screen/Post/post.dart';
 import 'package:firebase_work/Utility/utlity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,6 +36,9 @@ class _Add_postState extends State<Add_post> {
           child: Column(
             children: [
               TextFormField(
+                autofillHints: const [AutofillHints.username],
+                keyboardType: TextInputType.emailAddress,
+                autocorrect: true,
                 validator: (value) {
                   if (value == null || value.isEmpty && value.isEmpty) {
                     return 'Please enter your name';
@@ -77,6 +81,12 @@ class _Add_postState extends State<Add_post> {
                       });
                       Tost().Message(error.toString());
                     });
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Post_screen(),
+                        ),
+                        (route) => false);
                   }
                 },
                 child: Center(

@@ -40,6 +40,8 @@ class _Sing_upState extends State<Sing_up> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  autofillHints: const [AutofillHints.username],
+                  keyboardType: TextInputType.emailAddress,
                   autocorrect: true,
                   controller: email,
                   autofocus: true,
@@ -60,6 +62,8 @@ class _Sing_upState extends State<Sing_up> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  autofillHints: const [AutofillHints.password],
+                  keyboardType: TextInputType.visiblePassword,
                   obscureText: _obscureText,
                   autocorrect: true,
                   controller: pwd,

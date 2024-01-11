@@ -13,7 +13,7 @@ class Num_auth extends StatefulWidget {
 class _Num_authState extends State<Num_auth> {
   final phonenumc = TextEditingController(text: "+91");
 
-  final auth = FirebaseAuth.instance; 
+  final auth = FirebaseAuth.instance;
 
   bool load = false;
 
@@ -31,6 +31,7 @@ class _Num_authState extends State<Num_auth> {
             children: [
               TextFormField(
                   controller: phonenumc,
+                  autofillHints: const [AutofillHints.username],
                   decoration: InputDecoration(
                     suffixIcon: const Icon(Icons.numbers),
                     border: OutlineInputBorder(

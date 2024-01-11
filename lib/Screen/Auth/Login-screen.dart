@@ -47,6 +47,8 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
+                  autofillHints: const [AutofillHints.username],
+                  keyboardType: TextInputType.emailAddress,
                   autocorrect: true,
                   controller: email,
                   autofocus: true,
@@ -78,6 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                     return null;
                   },
+                  autofillHints: const [AutofillHints.password],
+                  keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
                       suffixIcon: IconButton(
                         onPressed: () =>

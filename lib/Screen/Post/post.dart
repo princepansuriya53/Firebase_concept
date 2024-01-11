@@ -50,8 +50,10 @@ class _Post_screenState extends State<Post_screen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextFormField(
-              onTap: () => FocusScope.of(context).unfocus(),
+              autofillHints: const [AutofillHints.username],
+              keyboardType: TextInputType.emailAddress,
               autocorrect: true,
+              onTap: () => FocusScope.of(context).unfocus(),
               autofocus: true,
               controller: searchFilter,
               decoration: InputDecoration(
@@ -128,7 +130,7 @@ class _Post_screenState extends State<Post_screen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Add_post()),
+              MaterialPageRoute(builder: (context) => const Add_post()),
             );
           },
           child: const Icon(Icons.add)),
